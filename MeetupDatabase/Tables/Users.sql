@@ -1,0 +1,12 @@
+﻿CREATE TABLE [dbo].[Users]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY(1,1), 
+    [Name] NVARCHAR(50) NOT NULL, 
+    [Surname] NVARCHAR(50) NOT NULL, 
+    [Login] NVARCHAR(50) NOT NULL, 
+    [Password] NVARCHAR(200) NOT NULL, 
+    [RoleId] TINYINT NOT NULL
+    CONSTRAINT [FK_Users_Role] FOREIGN KEY
+    REFERENCES [dbo].[Roles]([Id]) ON DELETE NO ACTION
+)
+
